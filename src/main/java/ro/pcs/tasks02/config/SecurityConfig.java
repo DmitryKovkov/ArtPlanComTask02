@@ -25,25 +25,21 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                .csrf().disable()
                 .authorizeRequests()
              //   .antMatchers("/login").permitAll()
-                .antMatchers("/").permitAll()
-                .antMatchers("/animals").hasAnyRole("USER", "ADMIN")
-                .antMatchers("/animals/**").hasAnyRole("USER", "ADMIN")
-             //   .anyRequest().authenticated()
+             //   .antMatchers("/").permitAll()
+             //   .antMatchers("/animals").hasAnyRole("USER", "ADMIN")
+             //   .antMatchers("/animals/**").hasAnyRole("USER", "ADMIN")
+                .anyRequest().authenticated()
              //   .and().formLogin()
                 .and()
                 .httpBasic()
                 .and().sessionManagement().disable();
-               // .loginPage("/login")
-               // .usernameParameter("login")
-               // .passwordParameter("password")
-               // .defaultSuccessUrl("/animals/all")
                // .permitAll();
     }
 
     @Bean
     public PasswordEncoder passwordEncoder() {
-        return new BCryptPasswordEncoder();
-        //NoOpPasswordEncoder.getInstance();
+        return NoOpPasswordEncoder.getInstance();
+        //NoOpPasswordEncoder.getInstance()new BCryptPasswordEncoder();
     }
 
     @Override

@@ -16,7 +16,6 @@ public class LoginController {
 
     @RequestMapping(value = "/register", method = RequestMethod.POST, produces = "application/json;charset=utf-8")
     public User addUser(@RequestBody User user){
-        userService.create(user);
         return userService.create(user);
     }
 
