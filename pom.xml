@@ -10,6 +10,7 @@
     </parent>
     <groupId>ro.pcs</groupId>
     <artifactId>tasks02</artifactId>
+    <packaging>jar</packaging>
     <version>0.0.1-SNAPSHOT</version>
     <name>tasks02</name>
     <description>tasks02</description>
