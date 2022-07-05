@@ -1,0 +1,7 @@
+{
+  "name": "static",
+  "version": "1.0.0",
+  "dependencies": {
+    "id":1,"type":"Cow","bithday":"2022-07-03T21:00:00.000+00:00","sex":"man","nickname":"Bim"
+  }
+}
