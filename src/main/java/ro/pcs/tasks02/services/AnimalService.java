@@ -9,4 +9,5 @@ public interface AnimalService {
     Animal getAnimalById(Integer id);
     Animal addAnimal(Animal animal);
     void deleteAnimal(Integer id);
+    Animal putAnimal (Integer id, Animal animal);
 }

@@ -33,4 +33,9 @@ public class AnimalController {
         animalService.deleteAnimal(id);
     }
 
+    @RequestMapping(value = "animals/put/{id}", method = RequestMethod.PUT)
+    public Animal putAnimal(@PathVariable("id") Integer id, @RequestBody Animal animal) {
+        return animalService.putAnimal(id, animal);
+    }
+
 }

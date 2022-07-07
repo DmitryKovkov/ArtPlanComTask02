@@ -38,5 +38,18 @@ public class AnimalServiceImpl implements AnimalService{
         animalRepository.deleteById(id);
     }
 
+    @Override
+    public Animal putAnimal(Integer id, Animal animal) {
+        if (animalRepository.findById(id).isPresent()) {
+            Animal animalUpd = animalRepository.findAnimalById(id);
+            animalUpd.setNickname(animal.getNickname());
+            animalUpd.setBithday(animal.getBithday());
+            animalUpd.setSex(animal.getSex());
+            return animalRepository.save(animalUpd);
+        } else {
+            return animalRepository.save(animal);
+        }
+    }
+
 
 }

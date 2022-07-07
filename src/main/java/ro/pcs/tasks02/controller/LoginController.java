@@ -20,7 +20,7 @@ public class LoginController {
     }
 
     @RequestMapping(value = "/login", method = RequestMethod.GET, produces = "application/json;charset=utf-8")
-    public User getUser (Authentication authentication, Principal principal){
+    public User getUser (Principal principal){
         return userService.getUserBylogin(principal.getName());
     }
 }

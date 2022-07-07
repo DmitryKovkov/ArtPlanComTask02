@@ -23,23 +23,22 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http
                .csrf().disable()
-                .authorizeRequests()
+               .authorizeRequests()
              //   .antMatchers("/login").permitAll()
              //   .antMatchers("/").permitAll()
              //   .antMatchers("/animals").hasAnyRole("USER", "ADMIN")
              //   .antMatchers("/animals/**").hasAnyRole("USER", "ADMIN")
-                .anyRequest().authenticated()
+               .anyRequest().authenticated()
              //   .and().formLogin()
-                .and()
-                .httpBasic()
-                .and().sessionManagement().disable();
+               .and()
+               .httpBasic()
+               .and().sessionManagement().disable();
                // .permitAll();
     }
 
     @Bean
     public PasswordEncoder passwordEncoder() {
         return NoOpPasswordEncoder.getInstance();
-        //NoOpPasswordEncoder.getInstance()new BCryptPasswordEncoder();
     }
 
     @Override
